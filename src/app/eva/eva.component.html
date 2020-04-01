@@ -1,0 +1,11 @@
+<h1>Breweries</h1>
+
+<ul *ngIf ="brews">
+<li *ngFor="let brew of brews">
+<p class="name">{{ brew.name}}</p>
+<p class="country">{{ brew.country}}</p>
+<a calss="site" href="{{ brew.website_url }}"> website</a>
+</li>
+</ul>
+
+    x
