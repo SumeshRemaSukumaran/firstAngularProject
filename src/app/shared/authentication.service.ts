@@ -94,7 +94,7 @@ return this.result;
 
 postLoginReDirect()
 {
-    this.router.navigateByUrl('/members') 
+    this.router.navigateByUrl('/home') 
 }
 
 // Firebase Logout 

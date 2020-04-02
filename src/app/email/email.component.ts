@@ -21,14 +21,14 @@ export class EmailComponent implements OnInit {
   constructor(private authService: AuthenticationService,
    private router: Router) {
    if(this.authService.IsAuthorized())
-   this.router.navigateByUrl('/members');
+      this.authService.postLoginReDirect();
    }
 
   ngOnInit(): void {
   }
 
   onSubmit(formData) {
-    this.error='';
+    this.error = '';
     if(formData.valid) {
       console.log(formData.value);
       this.authStat = this.authService.SigninWithEmailandPassword(formData.value.email,formData.value.password);      
@@ -38,10 +38,10 @@ export class EmailComponent implements OnInit {
         }  
         else{
           if(this.authStat==false){
-            this.error='Please try again!'
+            this.error = 'Please try again!'
           }
           else{
-            this.error= this.authStat;
+            this.error = this.authStat;
           }       
         }
     }
